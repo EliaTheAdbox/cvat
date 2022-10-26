@@ -51,21 +51,21 @@ To upgrade CVAT, follow these steps:
   docker logs cvat_server -f
   ```
 
-## How to udgrade CVAT from v1.7.0 to v2.1.0.
+## How to udgrade CVAT from any version to v2.2.0.
 
-Step by step commands how to udgrade CVAT from v1.7.0 to v2.1.0.
+Step by step commands how to udgrade CVAT from any version to v2.2.0.
 Let's assume that you have CVAT v1.7.0 working.
 ```shell
 cd cvat
 docker-compose down
 cd ..
 mv cvat cvat_old
-wget https://github.com/opencv/cvat/archive/refs/tags/v2.1.0.zip
-unzip v2.1.0.zip && mv cvat-2.1.0 cvat
+wget https://github.com/opencv/cvat/archive/refs/tags/v2.2.0.zip
+unzip v2.2.0.zip && mv cvat-2.2.0 cvat
 cd cvat
-docker pull cvat/server:v2.1.0
-docker tag cvat/server:v2.1.0 openvino/cvat_server:latest
-docker pull cvat/ui:v2.1.0
-docker tag cvat/ui:v2.1.0 openvino/cvat_ui:latest
+docker pull cvat/server:v2.2.0
+docker tag cvat/server:v2.2.0 openvino/cvat_server:latest
+docker pull cvat/ui:v2.2.0
+docker tag cvat/ui:v2.2.0 openvino/cvat_ui:latest
 docker-compose up -d
 ```
